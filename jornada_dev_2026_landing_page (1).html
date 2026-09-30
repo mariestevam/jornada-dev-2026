@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jornada Dev 2026 - O Futuro do Desenvolvimento & I.A.</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Google Font: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef2ff',
+              100: '#e0e7ff',
+              500: '#6366f1',
+              600: '#4f46e5',
+              700: '#4338ca',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS for gradient animations -->
+  <style>
+    .gradient-bg {
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 50%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 font-sans transition-colors duration-300 min-h-screen flex flex-col">
+
+  <!-- HEADER & NAVIGATION -->
+  <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-white/80 dark:bg-slate-900/80 border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-2 text-xl font-black tracking-tight group">
+        <span class="w-9 h-9 rounded-xl gradient-bg flex items-center justify-center text-white shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          <i class="fa-solid fa-terminal text-sm"></i>
+        </span>
+        <span class="text-slate-900 dark:text-white">Jornada Dev<span class="text-brand-500"> 2026</span></span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600 dark:text-slate-300">
+        <a href="#sobre" class="hover:text-brand-500 dark:hover:text-brand-500 transition-colors">Sobre</a>
+        <a href="#programacao" class="hover:text-brand-500 dark:hover:text-brand-500 transition-colors">Trilhas</a>
+        <a href="#palestrantes" class="hover:text-brand-500 dark:hover:text-brand-500 transition-colors">Palestrantes</a>
+        <a href="#inscricao" class="hover:text-brand-500 dark:hover:text-brand-500 transition-colors">Garantir Vaga</a>
+      </nav>
+
+      <!-- Right Controls: Dark Mode + CTA Button -->
+      <div class="flex items-center gap-3">
+        <button id="themeToggle" aria-label="Alternar tema" class="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+          <i id="themeIcon" class="fa-solid fa-moon"></i>
+        </button>
+
+        <a href="#inscricao" class="hidden sm:inline-flex items-center justify-center px-4 py-2 rounded-xl text-sm font-semibold text-white gradient-bg hover:opacity-90 shadow-md shadow-indigo-500/20 transition-all transform hover:-translate-y-0.5">
+          Ingresso Grátis
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow">
+    
+    <!-- HERO SECTION -->
+    <section class="relative py-16 md:py-24 overflow-hidden border-b border-slate-200 dark:border-slate-800">
+      <!-- Glow background effects -->
+      <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] gradient-bg opacity-10 dark:opacity-20 blur-3xl rounded-full -z-10 pointer-events-none"></div>
+
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <!-- Event Badge -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-indigo-200 dark:border-indigo-900/60 bg-indigo-50/80 dark:bg-indigo-950/50 text-indigo-700 dark:text-indigo-300 text-xs font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></span>
+          Maior Evento de Dev & I.A. de 2026
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-black tracking-tight text-slate-900 dark:text-white mb-6 leading-tight">
+          Acelere sua carreira na <br class="hidden sm:block">
+          <span class="gradient-text">Jornada Dev 2026</span>
+        </h1>
+
+        <p class="text-lg sm:text-xl text-slate-600 dark:text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+          3 dias intensivos de imersão em código, Inteligência Artificial, arquitetura de software e networking direto com profissionais do mercado.
+        </p>
+
+        <!-- Countdown Timer -->
+        <div class="mb-10 p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xl max-w-xl mx-auto">
+          <p class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4">O evento começa em:</p>
+          <div class="grid grid-cols-4 gap-3 text-center">
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800/80">
+              <span id="timerDays" class="block text-2xl sm:text-3xl font-black text-brand-500">00</span>
+              <span class="text-xs text-slate-500">Dias</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800/80">
+              <span id="timerHours" class="block text-2xl sm:text-3xl font-black text-brand-500">00</span>
+              <span class="text-xs text-slate-500">Horas</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800/80">
+              <span id="timerMinutes" class="block text-2xl sm:text-3xl font-black text-brand-500">00</span>
+              <span class="text-xs text-slate-500">Min</span>
+            </div>
+            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100 dark:border-slate-800/80">
+              <span id="timerSeconds" class="block text-2xl sm:text-3xl font-black text-brand-500">00</span>
+              <span class="text-xs text-slate-500">Seg</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#inscricao" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-white gradient-bg hover:opacity-95 shadow-lg shadow-indigo-500/25 transition-all text-center">
+            Garantir Minha Vaga Online
+          </a>
+          <a href="#programacao" class="w-full sm:w-auto px-8 py-4 rounded-xl font-bold text-slate-700 dark:text-slate-300 border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all text-center">
+            Ver Programação
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRACKS / FEATURES SECTION -->
+    <section id="sobre" class="py-20 bg-white dark:bg-slate-900/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl mb-4">
+            O que você vai aprender na <span class="gradient-text">Jornada Dev</span>
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400">
+            Conteúdo prático feito para quem quer sair da teoria e criar projetos prontos para o mercado.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 transition-all group">
+            <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-xl mb-6 shadow-md shadow-indigo-500/20 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-code"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Front-End Moderno</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Aprenda a construir interfaces ricas, responsivas e interativas utilizando HTML5, Tailwind CSS, JavaScript ES6+ e frameworks modernos.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 transition-all group">
+            <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-xl mb-6 shadow-md shadow-indigo-500/20 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">I.A. para Desenvolvedores</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Como integrar APIs de Inteligência Artificial, automatizar fluxos de desenvolvimento e potencializar sua produtividade com LLMs.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="p-8 rounded-2xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 hover:border-brand-500/50 transition-all group">
+            <div class="w-12 h-12 rounded-xl gradient-bg flex items-center justify-center text-white text-xl mb-6 shadow-md shadow-indigo-500/20 group-hover:scale-110 transition-transform">
+              <i class="fa-solid fa-briefcase"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-3">Portfólio & Carreira</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+              Dicas práticas para construir projetos de impacto, organizar o GitHub, se destacar em entrevistas técnicas e conquistar a primeira vaga.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCHEDULE / PROGRAMAÇÃO SECTION -->
+    <section id="programacao" class="py-20 bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl mb-4">
+            Programação do Evento
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400">
+            Confira a grade completa de conteúdos e palestrantes preparados para os 3 dias imersivos.
+          </p>
+
+          <!-- Day Selection Tabs -->
+          <div class="flex justify-center gap-3 mt-8">
+            <button data-day="1" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-500 text-white shadow-md transition-all">
+              Dia 01 • Front-End
+            </button>
+            <button data-day="2" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-bold bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+              Dia 02 • I.A. & Web
+            </button>
+            <button data-day="3" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-bold bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all">
+              Dia 03 • Carreira Tech
+            </button>
+          </div>
+        </div>
+
+        <!-- Day 1 Content -->
+        <div id="day-1" class="tab-content space-y-4">
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-brand-500 font-mono text-xs font-bold whitespace-nowrap">19:00 - 20:00</span>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Abertura: O Futuro do Front-End & UI Responsiva em 2026</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Palestrante: Camila Silva • Staff Front-End Engineer</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Ao Vivo</span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-brand-500 font-mono text-xs font-bold whitespace-nowrap">20:15 - 21:30</span>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Workshop Prático: Criando Interfaces Modernas com Tailwind CSS & JS</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Palestrante: Mariana Estevam • Desenvolvedora Web</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 dark:bg-emerald-950/50 text-emerald-600 dark:text-emerald-400">Mão na Massa</span>
+          </div>
+        </div>
+
+        <!-- Day 2 Content -->
+        <div id="day-2" class="tab-content space-y-4 hidden">
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-brand-500 font-mono text-xs font-bold whitespace-nowrap">19:00 - 20:00</span>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Integrando Modelos de Linguagem na sua Aplicação Web</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Palestrante: Lucas Andrade • Tech Lead & AI Specialist</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300">Ao Vivo</span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-brand-500 font-mono text-xs font-bold whitespace-nowrap">20:15 - 21:30</span>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Automação de Tarefas & Produtividade com I.A. no VS Code</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Palestrante: Beatriz Souza • Engineering Manager</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-amber-100 dark:bg-amber-950/50 text-amber-600 dark:text-amber-400">Interativo</span>
+          </div>
+        </div>
+
+        <!-- Day 3 Content -->
+        <div id="day-3" class="tab-content space-y-4 hidden">
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-brand-500 font-mono text-xs font-bold whitespace-nowrap">19:00 - 20:15</span>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Painel de Carreira: Do Portfólio Júnior à Primeira Vaga Dev</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Palestrantes: Convidados Especiais & Recrutadores Tech</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-purple-100 dark:bg-purple-950/50 text-purple-600 dark:text-purple-400">Painel Geral</span>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div class="flex items-start gap-4">
+              <span class="px-3 py-1.5 rounded-lg bg-indigo-100 dark:bg-indigo-950 text-brand-500 font-mono text-xs font-bold whitespace-nowrap">20:30 - 21:00</span>
+              <div>
+                <h4 class="font-bold text-slate-900 dark:text-white text-base">Encerramento & Sorteio de Mentorias de Carreira</h4>
+                <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Equipe de Organização Jornada Dev 2026</p>
+              </div>
+            </div>
+            <span class="px-3 py-1 rounded-full text-xs font-semibold bg-rose-100 dark:bg-rose-950/50 text-rose-600 dark:text-rose-400">Especial</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SPEAKERS SECTION -->
+    <section id="palestrantes" class="py-20 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <h2 class="text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl mb-4">
+            Palestrantes Confirmados
+          </h2>
+          <p class="text-slate-600 dark:text-slate-400">
+            Especialistas que estão na linha de frente da tecnologia no Brasil.
+          </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Speaker 1 -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden text-center p-6 hover:shadow-lg transition-all">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Palestrante" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-brand-500" onerror="this.src='https://placehold.co/100x100/6366f1/white?text=Dev'">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Camila Silva</h3>
+            <p class="text-xs text-brand-500 font-semibold mb-2">Staff Front-End Engineer</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Palestra: O futuro da Web: Performance e UI Responsiva em 2026</p>
+          </div>
+
+          <!-- Speaker 2 -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden text-center p-6 hover:shadow-lg transition-all">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=300&q=80" alt="Palestrante" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-brand-500" onerror="this.src='https://placehold.co/100x100/6366f1/white?text=Dev'">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Lucas Andrade</h3>
+            <p class="text-xs text-brand-500 font-semibold mb-2">Tech Lead & AI Specialist</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Palestra: Integrando Modelos de Linguagem na sua Aplicação Web</p>
+          </div>
+
+          <!-- Speaker 3 -->
+          <div class="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 overflow-hidden text-center p-6 hover:shadow-lg transition-all">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=300&q=80" alt="Palestrante" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-2 border-brand-500" onerror="this.src='https://placehold.co/100x100/6366f1/white?text=Dev'">
+            <h3 class="font-bold text-lg text-slate-900 dark:text-white">Beatriz Souza</h3>
+            <p class="text-xs text-brand-500 font-semibold mb-2">Engineering Manager</p>
+            <p class="text-xs text-slate-500 dark:text-slate-400">Palestra: Do Portfólio Júnior à Primeira Vaga na Gringa</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKET FORM SECTION -->
+    <section id="inscricao" class="py-20 bg-slate-100 dark:bg-slate-900/80 border-t border-slate-200 dark:border-slate-800">
+      <div class="max-w-xl mx-auto px-4 sm:px-6">
+        <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 shadow-2xl">
+          <div class="text-center mb-8">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-2">
+              Garanta seu Ingresso 100% Gratuito
+            </h2>
+            <p class="text-sm text-slate-600 dark:text-slate-400">
+              Preencha os dados abaixo para receber seu passaporte digital.
+            </p>
+          </div>
+
+          <form id="ticketForm" class="space-y-5">
+            <div>
+              <label for="userName" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Seu Nome Completo</label>
+              <input type="text" id="userName" required placeholder="Ex: Mariana Estevam" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm">
+            </div>
+
+            <div>
+              <label for="userEmail" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Seu Melhores E-mail</label>
+              <input type="email" id="userEmail" required placeholder="seuemail@exemplo.com" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm">
+            </div>
+
+            <div>
+              <label for="userLevel" class="block text-xs font-bold text-slate-700 dark:text-slate-300 uppercase mb-2">Nível de Experiência em T.I.</label>
+              <select id="userLevel" class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all text-sm">
+                <option value="Iniciante / Estudante">Iniciante / Estudante</option>
+                <option value="Desenvolvedor Júnior">Desenvolvedor Júnior</option>
+                <option value="Desenvolvedor Pleno / Sênior">Desenvolvedor Pleno / Sênior</option>
+              </select>
+            </div>
+
+            <button type="submit" class="w-full py-4 rounded-xl font-bold text-white gradient-bg hover:opacity-95 shadow-lg shadow-indigo-500/25 transition-all text-sm uppercase tracking-wider">
+              Confirmar Inscrição Grátis
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- MODAL: TICKET CONFIRMED -->
+  <div id="ticketModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl max-w-md w-full p-8 text-center shadow-2xl relative animate-fade-in">
+      <div class="w-16 h-16 rounded-full bg-emerald-100 dark:bg-emerald-950/50 text-emerald-500 flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-500/30">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+
+      <h3 class="text-2xl font-black text-slate-900 dark:text-white mb-2">Inscrição Confirmada!</h3>
+      <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Parabéns! Seu passaporte para a Jornada Dev 2026 foi gerado com sucesso.</p>
+
+      <!-- Digital Ticket Card -->
+      <div class="my-6 p-4 rounded-2xl border border-dashed border-slate-300 dark:border-slate-700 bg-slate-50 dark:bg-slate-950 text-left">
+        <p class="text-xs text-slate-400 font-mono">TICKET: #JD2026-DEV-JR</p>
+        <p id="ticketName" class="text-base font-bold text-slate-900 dark:text-white mt-1">Mariana Estevam</p>
+        <p id="ticketRole" class="text-xs text-brand-500 font-semibold">Dev Front-End</p>
+        <p class="text-xs font-semibold text-slate-700 dark:text-slate-300 mt-2">Status: Confirmado VIP</p>
+      </div>
+
+      <button id="closeModalBtn" class="w-full py-3 rounded-xl font-bold text-white gradient-bg hover:opacity-95 transition-all text-sm">
+        Concluir
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 py-8 text-xs text-slate-500 dark:text-slate-400">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      
+      <div class="flex items-center justify-center sm:justify-start gap-2 text-slate-900 dark:text-white font-bold">
+        <span class="w-7 h-7 rounded-lg gradient-bg flex items-center justify-center text-white text-xs">
+          <i class="fa-solid fa-code"></i>
+        </span>
+        Jornada Dev 2026
+      </div>
+
+      <!-- Dev Badge with Name -->
+      <div class="text-center sm:text-right">
+        <p>Desenvolvido por <strong class="text-slate-800 dark:text-slate-200">Mariana Estevam</strong></p>
+        <p class="mt-0.5 text-slate-400">Projeto para Portfólio de T.I. • HTML, Tailwind CSS & JS</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT LOGIC -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // 1. Dark Mode Toggle
+      const themeToggleBtn = document.getElementById('themeToggle');
+      const themeIcon = document.getElementById('themeIcon');
+      const htmlElement = document.documentElement;
+
+      // Check saved theme or default to dark
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'dark') {
+        htmlElement.classList.add('dark');
+        themeIcon.className = 'fa-solid fa-sun';
+      } else {
+        htmlElement.classList.remove('dark');
+        themeIcon.className = 'fa-solid fa-moon';
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        if (htmlElement.classList.contains('dark')) {
+          htmlElement.classList.remove('dark');
+          themeIcon.className = 'fa-solid fa-moon';
+          localStorage.setItem('theme', 'light');
+        } else {
+          htmlElement.classList.add('dark');
+          themeIcon.className = 'fa-solid fa-sun';
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      // 2. Countdown Timer
+      const targetDate = new Date();
+      targetDate.setDate(targetDate.getDate() + 45); // Set event to 45 days in future
+
+      function updateTimer() {
+        const now = new Date().getTime();
+        const difference = targetDate - now;
+
+        if (difference > 0) {
+          const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+          const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+          const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+          document.getElementById('timerDays').textContent = days < 10 ? '0' + days : days;
+          document.getElementById('timerHours').textContent = hours < 10 ? '0' + hours : hours;
+          document.getElementById('timerMinutes').textContent = minutes < 10 ? '0' + minutes : minutes;
+          document.getElementById('timerSeconds').textContent = seconds < 10 ? '0' + seconds : seconds;
+        }
+      }
+      setInterval(updateTimer, 1000);
+      updateTimer();
+
+      // 3. Form Submission & Modal Handling
+      const ticketForm = document.getElementById('ticketForm');
+      const ticketModal = document.getElementById('ticketModal');
+      const closeModalBtn = document.getElementById('closeModalBtn');
+      const ticketName = document.getElementById('ticketName');
+      const ticketRole = document.getElementById('ticketRole');
+
+      ticketForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameInput = document.getElementById('userName').value.trim();
+        const levelInput = document.getElementById('userLevel').value;
+
+        if (nameInput) {
+          ticketName.textContent = nameInput;
+          ticketRole.textContent = levelInput;
+          ticketModal.classList.remove('hidden');
+        }
+      });
+
+      closeModalBtn.addEventListener('click', () => {
+        ticketModal.classList.add('hidden');
+        ticketForm.reset();
+      });
+
+      // 4. Schedule Day Tabs Switcher
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const selectedDay = btn.getAttribute('data-day');
+
+          // Reset all buttons style
+          tabBtns.forEach(b => {
+            b.className = 'tab-btn px-6 py-2.5 rounded-xl text-sm font-bold bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all';
+          });
+
+          // Active button style
+          btn.className = 'tab-btn px-6 py-2.5 rounded-xl text-sm font-bold bg-brand-500 text-white shadow-md transition-all';
+
+          // Show selected day content
+          tabContents.forEach(content => {
+            if (content.id === `day-${selectedDay}`) {
+              content.classList.remove('hidden');
+            } else {
+              content.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>
